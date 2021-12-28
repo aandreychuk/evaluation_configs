@@ -5,7 +5,7 @@ environment:
   grid_config:
     map_name: "multiagent-random-0.3-64x64"
     num_agents:
-      grid_search: [50, 100, 150, 200, 250, 300, 350, 400]
+      grid_search: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
     density: 0.3
     size: 64
     seed:
@@ -14,6 +14,6 @@ environment:
 #      grid_search: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,]
 algo:
   grid_search:
-    - { name: APPO, path_to_weights: "weights/multi_agent"}
-    - { name: Decentralized }
-    - { name: Combined, path_to_weights: "weights/multi_agent"}
+#    - { name: APPO, path_to_weights: "weights/multi_agent"}
+#    - { name: Decentralized }
+    - { name: Combined, path_to_weights: "weights/grid_memory_10_v4", device: "cuda", num_process: 12}

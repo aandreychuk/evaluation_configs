@@ -91,12 +91,12 @@ environment:
     map_name: "warehouse-10-20-10-2-2.map"
     num_agents:
 #      grid_search: [10, 20, 30]
-      grid_search: [50, 100, 150, 200, 250, 300, 350, 400]
+      grid_search: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600]
     seed:
 #      grid_search: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       grid_search: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]   
 algo:
   grid_search:
-    - { name: APPO, path_to_weights: "weights/multi_agent"}
-    - { name: Decentralized }
-    - { name: Combined, path_to_weights: "weights/multi_agent"}
+#    - { name: APPO, path_to_weights: "weights/multi_agent"}
+#    - { name: Decentralized }
+    - { name: Combined, path_to_weights: "weights/grid_memory_10_v4", device: "cuda", num_process: 12}
